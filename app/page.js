@@ -8,10 +8,11 @@ export default function Home() {
   const [command, setCommand] = useState("");
   const [output, setOutput] = useState("");
 
-  const editor = useEditor({
-    extensions: [StarterKit],
-    content: "<p>[p1] Start writing here...</p>",
-  });
+const editor = useEditor({
+  extensions: [StarterKit],
+  content: "<p>[p1] Start writing here...</p>",
+  immediatelyRender: false,
+});
 
   const runCommand = async () => {
     const { from, to } = editor.state.selection;
